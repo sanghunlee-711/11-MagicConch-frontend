@@ -1,68 +1,53 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Magic-Conch(많이 배워가자!)
 
-## Available Scripts
+## 프로젝트 주제
 
-In the project directory, you can run:
+KINFOLK 사이트 클론 프로젝트
 
-### `yarn start`
+- 유명 잡지 사이트 KINFOLK의 클로닝 프로젝트.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 팀원
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- 이상훈 / https://velog.io/@cloudlee711
+- 이효정 / https://hj-tilblog.tistory.com/
+- 김규영 / https://velog.io/@feisyhe
 
-### `yarn test`
+## 팀 회의록
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+https://trello.com/b/AW6cSnQy/magical-conch-shell
 
-### `yarn build`
+## 사용한 기술
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Front-End
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- HTML / CSS
+- JavaScript
+- React
+  - create-react-app settings
+  - 공통 Component 재활용
+  - React-slick
+  - React-Router-DOM
+  - fetch를 이용한 API 호출
+  - map을 이용한 jsx 리턴
+  - Routes.js 의 path 를 이용한 동적 라우팅
+  - 함수형, 클래스형 컴포넌트 활용
+  - Redux 적용
+- SASS
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Back-End
 
-### `yarn eject`
+- Python
+- Django
+- MySQL
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3. 공통
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- JSON
+- Git
+- AWS
+- Linux
+- HTTP
+- Postman
+  - API 호출
+  - 응답 확인
+- Scrum 진행 방식을 통한 협업
