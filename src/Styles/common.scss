@@ -1,0 +1,82 @@
+/* font setting */
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600&display=swap");
+
+$libre: "Libre Baskerville";
+$alata: "Alata";
+$lora: "Lora";
+$comfortaa: "Comfortaa";
+
+/* color */
+$titleBlack: #000000;
+$borderBlack: #333333;
+$contentsGray: #4d4d4d;
+$CartCountGray: #999999;
+$dateTextGray: #b3b3b3;
+$white: #ffffff;
+
+/* mixin common setting */
+@mixin setSize($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin setAbsolute($top: null, $left: null, $bottom: null, $right: null) {
+  position: absolute;
+  @if not($top) {
+  } @else {
+    top: $top;
+  }
+
+  @if not($left) {
+  } @else {
+    left: $left;
+  }
+
+  @if not($bottom) {
+  } @else {
+    bottom: $bottom;
+  }
+
+  @if not($right) {
+  } @else {
+    right: $right;
+  }
+}
+
+@mixin setFlex(
+  $justify-justify: null,
+  $align-align: null,
+  $flex-wrap: null,
+  $order-order: null
+) {
+  display: flex;
+  @if not($justify-justify) {
+  } @else {
+    justify-content: $justify-justify;
+  }
+
+  @if not($align-align) {
+  } @else {
+    align-content: $align-align;
+  }
+
+  @if not($flex-wrap) {
+  } @else {
+    flex-wrap: $flex-wrap;
+  }
+
+  @if not($order-order) {
+  } @else {
+    order: $order-order;
+  }
+}
+
+@mixin gridPosition($ges, $gce, $grs, $gre) {
+  grid-column-start: $ges;
+  grid-column-end: $gce;
+  grid-row-start: $grs;
+  grid-row-end: $gre;
+}
