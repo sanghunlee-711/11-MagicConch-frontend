@@ -7,7 +7,7 @@ class Footer extends Component {
     return (
       <FooterContents>
         <FooterContainer>
-          <FooterLeftTitle>
+          <KinfolkTitle>
             <ul>
               <span>© Kinfolk 2020</span>
               <li>
@@ -17,9 +17,9 @@ class Footer extends Component {
                 <Link to="/productList">Subscribe</Link>
               </li>
             </ul>
-          </FooterLeftTitle>
+          </KinfolkTitle>
           <div>
-            <FooterSnsTitle>
+            <SnsLink>
               <li>
                 <a
                   alt="FactbookLink"
@@ -41,72 +41,47 @@ class Footer extends Component {
                   Instargram
                 </a>
               </li>
-            </FooterSnsTitle>
+            </SnsLink>
           </div>
-          <span>
+          <WebDesign>
             <a href="https://www.madebysix.com/">
               Website design & development by Six
             </a>
-          </span>
+          </WebDesign>
         </FooterContainer>
       </FooterContents>
     );
   }
 }
 
-const footerHover = css`
-  &:link,
-  &:visited,
-  &:active {
-    color: black;
-  }
-
-  &:hover {
-    transition: ease 250ms color;
-    color: #999999;
-  }
-`;
-
 const listMargin = css`
-  margin-right: 35px;
-`;
-
-const setSize = (width, height = null) => css`
-  width: ${width};
-  height: ${height};
-`;
-
-const setFlex = (justify, align, direction) => css`
-  display: flex;
-  justify-content: ${justify};
-  align-items: ${align};
-  flex-direction: ${direction};
+  margin-right: 30px;
 `;
 
 const FooterContents = styled.footer`
   position: fixed;
-  bottom: 120px;
-  ${setSize("100vw")}
+  bottom: 0;
+  ${(props) => props.theme.setSize("100vw")}
   margin-top: 220px;
-  padding: 0 3.3%;
-  font-size: 37px;
-  font-weight: 400;
+  padding: 0 2.5%;
+  font-size: 16px;
+  font-weight: 600;
   a {
-    ${footerHover};
+    ${(props) => props.theme.footerHover};
   }
 `;
 
 const FooterContainer = styled.section`
   ul {
-    ${setFlex()}
+    ${(props) => props.theme.setFlex()}
   }
-  ${setFlex("space-between")}
-  padding-top: 30px;
-  border-top: 10px solid black;
+  ${(props) => props.theme.setFlex("space-between")}
+  padding: 1% 0 2.5% 0;
+  border-top: 3px solid black;
   line-height: 1.4;
 `;
 
-const FooterLeftTitle = styled.div`
+const KinfolkTitle = styled.div`
   span {
     ${listMargin};
   }
@@ -117,11 +92,15 @@ const FooterLeftTitle = styled.div`
   }
 `;
 
-const FooterSnsTitle = styled.ul`
-  ${setFlex()}
+const SnsLink = styled.ul`
+  ${(props) => props.theme.setFlex()}
   li {
     ${listMargin};
   }
+`;
+
+const WebDesign = styled.span`
+  letter-spacing: 1.5px;
 `;
 
 export default Footer;

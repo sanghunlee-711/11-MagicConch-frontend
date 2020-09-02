@@ -10,6 +10,8 @@ import Search from "./Pages/Search/Search";
 import MyPage from "./Pages/MyPage/MyPage";
 import Cart from "./Pages/Cart/Cart";
 import Contents from "./Components/Contents/Contents";
+import "./Styles/common.scss";
+import "./Styles/reset.scss";
 
 class Routes extends Component {
   render() {
