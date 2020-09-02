@@ -1,0 +1,94 @@
+{
+  "products": [
+    {
+      "outer_image_url": "https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/K36_Product_Cover_Thumb-350x350.jpg",
+      "product_type": "MAGAZINE",
+      "outer_tag": "Issue 36",
+      "price": 18
+    },
+    {
+      "outer_image_url": "https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2016/08/K36_DigitalSubscription_thumb-350x350.jpg",
+      "product_type": "SUBSCRIPTIONS",
+      "outer_tag": "Digital Subscription",
+      "price": 40
+    },
+    {
+      "outer_image_url": "https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/K35_Product_Cover_Thumb_1000x1000-350x350.jpg",
+      "product_type": "MAGAZINE",
+      "outer_tag": "Issue 35",
+      "price": 18
+    },
+    {
+      "outer_image_url": "https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/K34_Product_Cover-350x350.jpg",
+      "product_type": "MAGAZINE",
+      "outer_tag": "Issue 34",
+      "price": 18
+    },
+    {
+      "outer_image_url": "https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2019/07/Kinfolk33_Cover_Product-350x350.jpg",
+      "product_type": "MAGAZINE",
+      "outer_tag": "Issue 33",
+      "price": 18
+    },
+    {
+      "outer_image_url": "https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2019/04/K32_Cover_Thumb-350x350.jpg",
+      "product_type": "MAGAZINE",
+      "outer_tag": "Issue 32",
+      "price": 18
+    },
+    {
+      "outer_image_url": "https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/K36_Product_Cover_Thumb-350x350.jpg",
+      "product_type": "SUBSCRIPTIONS",
+      "outer_tag": "Premium Subscription",
+      "price": 75
+    },
+    {
+      "outer_image_url": "https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/K36_Product_Cover_Thumb-350x350.jpg",
+      "product_type": "MAGAZINE",
+      "outer_tag": "Issue 36",
+      "price": 18
+    },
+    {
+      "outer_image_url": "https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/K36_Product_Cover_Thumb-350x350.jpg",
+      "product_type": "MAGAZINE",
+      "outer_tag": "Issue 31",
+      "price": 18
+    },
+    {
+      "outer_image_url": "https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/K36_Product_Cover_Thumb-350x350.jpg",
+      "product_type": "MAGAZINE",
+      "outer_tag": "Issue 30",
+      "price": 18
+    },
+    {
+      "outer_image_url": "https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/K36_Product_Cover_Thumb-350x350.jpg",
+      "product_type": "BOOKS",
+      "outer_tag": "The Kinfolk Garden",
+      "price": 40
+    },
+    {
+      "outer_image_url": "https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/K36_Product_Cover_Thumb-350x350.jpg",
+      "product_type": "BOOKS",
+      "outer_tag": "The Eye",
+      "price": 45
+    },
+    {
+      "outer_image_url": "https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/K36_Product_Cover_Thumb-350x350.jpg",
+      "product_type": "BOOKS",
+      "outer_tag": "The Eye - Limited Edition",
+      "price": 150
+    },
+    {
+      "outer_image_url": "https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/K36_Product_Cover_Thumb-350x350.jpg",
+      "product_type": "BOOKS",
+      "outer_tag": "The Kinfolk Entrepreneur",
+      "price": 35
+    },
+    {
+      "outer_image_url": "https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/K36_Product_Cover_Thumb-350x350.jpg",
+      "product_type": "BOOKS",
+      "outer_tag": "The Kinfolk Home",
+      "price": 40
+    }
+  ]
+}
