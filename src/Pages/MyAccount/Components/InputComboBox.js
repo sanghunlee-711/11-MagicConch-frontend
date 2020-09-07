@@ -11,16 +11,16 @@ class InputComboBox extends Component {
           <span>*</span>
         </InputTitleText>
 
-        {topText === "Password" ? (
+        {topText.includes("password") || topText.startsWith("Password") ? (
           <InputBox
-            text="password"
+            type="password"
             value={password}
             name={name}
             onChange={this.props.onChangeHandler}
           />
         ) : (
           <InputBox
-            text={"text"}
+            type="text"
             value={userInfo}
             name={name}
             onChange={this.props.onChangeHandler}
