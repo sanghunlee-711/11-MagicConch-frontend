@@ -70,6 +70,8 @@ const NavContents = styled.nav`
   right: 0;
   left: 0;
   padding: 0 2.5%;
+  z-index:99;
+  background-color: #fff;
 `;
 
 const NavWrapper = styled.div`

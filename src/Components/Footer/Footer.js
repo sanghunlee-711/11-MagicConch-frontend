@@ -59,7 +59,7 @@ const listMargin = css`
 `;
 
 const FooterContents = styled.footer`
-  position: fixed;
+  position: relative;
   bottom: 0;
   ${(props) => props.theme.setSize("100vw")}
   margin-top: 220px;
