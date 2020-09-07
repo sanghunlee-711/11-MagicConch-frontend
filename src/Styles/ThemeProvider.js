@@ -40,6 +40,13 @@ const theme = {
     align-items: ${align};
     flex-direction: ${direction};
   `,
+
+  setFont: (size, weight, color, family = null) => css`
+    font-size: ${size};
+    font-weight: ${weight};
+    color: ${color};
+    font-family: ${family};
+  `,
 };
 
 export default theme;

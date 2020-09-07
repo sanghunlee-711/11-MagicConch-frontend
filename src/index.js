@@ -8,9 +8,9 @@ import theme from "./Styles/ThemeProvider";
 import { ThemeProvider } from "styled-components";
 
 ReactDOM.render(
-  <ThemeProvider theme={theme}>
+  <ThemeProvider key={theme} theme={theme}>
     <Router />
-    {/* <GlobalStyle /> */}
+    <GlobalStyle />
   </ThemeProvider>,
   document.getElementById("root")
 );
