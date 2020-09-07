@@ -25,7 +25,7 @@ class Routes extends Component {
           <Route exact path="/my-account/" component={MyAccount} />
           <Route exact path="/my-account/:id" component={MyAccount} />
           <Route exact path="/cart" component={Cart} />
-          <Route exact path="/search" component={Search} />
+          <Route exact path="/search/:search" component={Search} />
         </Switch>
         <Footer />
       </Router>

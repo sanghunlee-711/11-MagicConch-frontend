@@ -213,5 +213,135 @@
     {
       "src": "https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/09/K37_SpreadSliders_2020_008-1600x1067.jpg"
     }
+  ],
+  "Design": [
+    {
+      "id": 1,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/Downsizing_03-700x700.jpg', 'https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/Downsizing_03-150x150.jpg', 'https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/Downsizing_03-350x350.jpg', 'https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/Downsizing_03-100x100.jpg']",
+      "tag": "Feature",
+      "title": "Downsizing",
+      "description": "Unable to travel during lockdown, architects Salem Charabi & Rasmus Stroyberg decided to recreate a favorite building.",
+      "published_data": "None",
+      "category_id": 1
+    },
+    {
+      "id": 2,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/AtHomewith_Nanushka_01-350x234.jpg']",
+      "tag": "Issue 37",
+      "title": "At Home With: Nanushka",
+      "description": "Meet the bold couple who took their Budapest brand global.",
+      "published_data": "10/08/2020",
+      "category_id": 1
+    }
+  ],
+  "DesignMock": [
+    {
+      "id": 1,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/Downsizing_03-700x700.jpg', 'https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/Downsizing_03-150x150.jpg', 'https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/Downsizing_03-350x350.jpg', 'https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/Downsizing_03-100x100.jpg']",
+      "tag": "Feature",
+      "title": "Downsizing",
+      "description": "Unable to travel during lockdown, architects Salem Charabi & Rasmus Stroyberg decided to recreate a favorite building.",
+      "published_data": "None",
+      "category_id": 1
+    },
+    {
+      "id": 2,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/AtHomewith_Nanushka_01-350x234.jpg']",
+      "tag": "Issue 37",
+      "title": "At Home With: Nanushka",
+      "description": "Meet the bold couple who took their Budapest brand global.",
+      "published_data": "10/08/2020",
+      "category_id": 1
+    },
+    {
+      "id": 3,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/07/Casa_Scatturin-350x233.jpg']",
+      "tag": "Issue 37",
+      "title": "Casa Scatturin",
+      "description": "Law and domestic order in Carlo Scarpa’s Venice.",
+      "published_data": "10/08/2020",
+      "category_id": 1
+    },
+    {
+      "id": 4,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/04/Alexis_Sablone_01-350x233.jpg']",
+      "tag": "Issue 36",
+      "title": "Alexis Sablone",
+      "description": "Not many architects skate for their country, and not many skateboarders design the parks they skate in.",
+      "published_data": "29/04/2020",
+      "category_id": 1
+    },
+    {
+      "id": 5,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/04/AtWorkWith_Hariri__Hariri_02-350x524.jpg']",
+      "tag": "Issue 36",
+      "title": "At Work With: Hariri & Hariri",
+      "description": "Sisters Gisue Hariri and Mojgan Hariri have always been “partners in crime.\" Charles Shafaieh meets them at their New York architecture studio.",
+      "published_data": "29/04/2020",
+      "category_id": 1
+    },
+    {
+      "id": 6,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/02/Last_Night_01-350x525.jpg']",
+      "tag": "Issue 35",
+      "title": "Last Night",
+      "description": "What did Danish design gallerist Rune Bruun Johansen do with his evening?",
+      "published_data": "06/02/2020",
+      "category_id": 1
+    },
+    {
+      "id": 7,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/Spaceship_House-350x491.jpg']",
+      "tag": "Issue 35",
+      "title": "Spaceship House",
+      "description": "The mothership of Googie architecture.",
+      "published_data": "06/02/2020",
+      "category_id": 1
+    },
+    {
+      "id": 8,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/Alexandre_Mattiussi_01-350x452.jpg']",
+      "tag": "Issue 35",
+      "title": "Alexandre Mattiussi",
+      "description": "Meet the French fashion designer who just wants to be friends.",
+      "published_data": "06/02/2020",
+      "category_id": 1
+    },
+    {
+      "id": 9,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/Bad_Idea_Disposable_Clothes-350x471.jpg']",
+      "tag": "Issue 35",
+      "title": "Bad Idea: Disposable Clothes",
+      "description": "A recollection of the terrible trend for paper dresses.",
+      "published_data": "06/02/2020",
+      "category_id": 1
+    },
+    {
+      "id": 10,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/mutina_build_01-793x1024-350x452.jpg']",
+      "tag": "",
+      "title": "Stack the Odds",
+      "description": "A sculptural take on tiles, produced in partnership with Mutina.",
+      "published_data": "07/11/2019",
+      "category_id": 1
+    },
+    {
+      "id": 10,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/mutina_build_01-793x1024-350x452.jpg']",
+      "tag": "",
+      "title": "Stack the Odds",
+      "description": "A sculptural take on tiles, produced in partnership with Mutina.",
+      "published_data": "07/11/2019",
+      "category_id": 1
+    },
+    {
+      "id": 10,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/mutina_build_01-793x1024-350x452.jpg']",
+      "tag": "",
+      "title": "Stack the Odds",
+      "description": "A sculptural take on tiles, produced in partnership with Mutina.",
+      "published_data": "07/11/2019",
+      "category_id": 1
+    }
   ]
 }

@@ -4,7 +4,13 @@ import styled from "styled-components";
 
 function CardContents(props) {
   return (
-    <EachContents width={props.width}>
+    <EachContents
+      width={props.width}
+      height={props.height}
+      borderLeft={props.borderLeft}
+      minWidth={props.minWidth}
+      padding={props.padding}
+    >
       <Link to="/" href="https://www.kinfolk.com/at-home-with-kinfolk/">
         <img src={props.src} alt="AtHomeWithKinfolk_IG_01" />
       </Link>
@@ -26,7 +32,10 @@ function CardContents(props) {
 
 const EachContents = styled.div`
   width: ${(props) => props.width || "100%"};
-  padding: 2%;
+  height: ${(props) => props.height || "100%"};
+  border-left: ${(props) => props.borderLeft};
+  min-width: ${(props) => props.minWidth};
+  padding: ${(props) => props.padding || "2%"};
 
   img {
     display: block;
