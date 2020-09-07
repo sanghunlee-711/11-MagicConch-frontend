@@ -10,7 +10,7 @@ export default function Nav() {
         <div>
           <NavLeftButton>
             <li>
-              <KinfolkButton>Subscribe</KinfolkButton>
+              <KinfolkButton to="/">Subscribe</KinfolkButton>
             </li>
             <li>
               Issue<span>36</span>
@@ -69,8 +69,9 @@ const NavContents = styled.nav`
   top: 0;
   right: 0;
   left: 0;
+  width: 100vw;
   padding: 0 2.5%;
-  z-index:99;
+  z-index: 99;
   background-color: #fff;
 `;
 
@@ -81,8 +82,8 @@ const NavWrapper = styled.div`
 `;
 
 const KinfolkButton = styled(Link)`
-  padding: 10% 25%;
   margin: auto;
+  padding: 10% 25%;
   border: 1px solid black;
   font-size: 18px;
   text-align: center;
