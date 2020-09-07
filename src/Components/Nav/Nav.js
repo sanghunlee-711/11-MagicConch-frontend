@@ -15,13 +15,17 @@ export default function Nav() {
             <li>
               Issue<span>36</span>
             </li>
-            <li>Shop</li>
+            <Link to="/productList">
+              <li>Shop</li>
+            </Link>
           </NavLeftButton>
         </div>
-        <TitleLogo
-          alt="TitleLogo"
-          src="https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/themes/kinfolk2020/assets/img/logo.svg"
-        />
+        <Link to="/">
+          <TitleLogo
+            alt="TitleLogo"
+            src="https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/themes/kinfolk2020/assets/img/logo.svg"
+          />
+        </Link>
         <NavRightButton>
           <li>
             <CartMark>
