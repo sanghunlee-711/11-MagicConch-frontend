@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import SignButton from "./SignButton";
-import InputComboBox from "./InputComboBox";
+import InputComboBox from "../../InputComboBox";
 import CheckBoxWithText from "./CheckBoxWithText";
 import LoginDescription from "./LoginDescription.js";
 
@@ -12,7 +12,6 @@ class LoginArticle extends Component {
       loginPassword,
       onChangeHandler,
       onClickHandler,
-      onSubmitHandler,
     } = this.props;
 
     return (
@@ -30,13 +29,10 @@ class LoginArticle extends Component {
           onChangeHandler={onChangeHandler}
           topText="Password"
         />
-        <CheckBoxWithText
-          onClickHandler={() => onClickHandler("Login")}
-          text="Remember me"
-        />
+        <CheckBoxWithText text="Remember me" />
         <StyledButton>
           <SignButton
-            onClickHandler={() => onSubmitHandler("Login")}
+            onClickHandler={() => onClickHandler("Login")}
             text="Log in"
           />
         </StyledButton>
@@ -48,7 +44,7 @@ class LoginArticle extends Component {
 
 export default LoginArticle;
 
-const Article = styled.form`
+const Article = styled.div`
   width: 100%;
   padding: 0 20px;
 `;

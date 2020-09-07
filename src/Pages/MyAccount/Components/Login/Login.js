@@ -3,12 +3,13 @@ import styled from "styled-components";
 import LoginArticle from "./Components/LoginArticle";
 import RegisterArticle from "./Components/RegisterArticle";
 import ErrorTextBox from "./Components/ErrorTextBox";
-import { Config } from "./Components/Config";
+import { config } from "./Components/Config";
 
-class LoginInput extends Component {
+class Login extends Component {
   constructor() {
     super();
     this.state = {
+      data: "",
       errorMessage: "",
       userID: "",
       loginPassword: "",
@@ -16,8 +17,31 @@ class LoginInput extends Component {
       regPassword: "",
       isAutoLogin: false,
       isSubcriptEmail: false,
+      id: "",
+      name: "",
+      provider: "",
     };
   }
+
+  responseKakao = (res) => {
+    console.log("success");
+    console.log(res);
+    this.setState({
+      id: res.profile.id,
+      name: res.profile.properties,
+      provider: "kakao",
+    });
+    fetch("http://127.0.0.1:8000/user/kakao_login", {
+      method: "POST",
+      head: {
+        Authorization: res.response.access_token,
+      },
+    })
+      .then((rps) => rps.json())
+      .then((rps) => console.log(rps));
+  };
+
+  responseFail = (err) => {};
 
   onChangeHandler = (event) => {
     this.setState({ [event.target.name]: event.target.value });
@@ -32,38 +56,34 @@ class LoginInput extends Component {
       : this.setState({ isSubcriptEmail: !isSubcriptEmail });
   };
 
-  onSubmitHandler = (event) => {
-    const {
-      userID,
-      loginPassword,
-      email,
-      regPassword,
-      isAutoLogin,
-      isSubcriptEmail,
-    } = this.state;
-    let jsonBody, config;
+  onClickHandler = (event) => {
+    const { userID, loginPassword, email, regPassword } = this.state;
 
     if (event === "login") {
-      jsonBody = {
-        userID: userID,
-        loginPassword: loginPassword,
-      };
-      config = `${Config}/signin`;
+      fetch(`${config}/login`, {
+        method: "POST",
+        body: JSON.stringify({
+          email: userID,
+          password: loginPassword,
+        }),
+      })
+        .then((res) => res.json())
+        .then((res) =>
+          res.token
+            ? localStorage.setItem({ access_token: res.token })
+            : this.setState({ errorMessage: res.message })
+        );
     } else {
-      jsonBody = {
-        email: email,
-        regPassword: regPassword,
-      };
-      config = `${Config}/signup`;
+      fetch(`${config}/sign_up`, {
+        method: "POST",
+        body: JSON.stringify({
+          email: email,
+          password: regPassword,
+        }),
+      })
+        .then((res) => res.json())
+        .then((res) => this.setState({ errorMessage: res.message }));
     }
-
-    fetch(config, {
-      method: "POST",
-      body: JSON.stringify(jsonBody),
-    })
-      .then((res) => res.json())
-      .then((res) => this.setState({ errorMessage: res }))
-      .then((res) => localStorage.setItem("access_token", res.access_token));
   };
 
   render() {
@@ -74,7 +94,6 @@ class LoginInput extends Component {
       email,
       regPassword,
     } = this.state;
-
     return (
       <>
         {errorMessage && <ErrorTextBox printText={errorMessage} />}
@@ -82,16 +101,16 @@ class LoginInput extends Component {
           <LoginArticle
             onChangeHandler={this.onChangeHandler}
             onClickHandler={this.onClickHandler}
-            onSubmitHandler={this.onSubmitHandler}
             userID={userID}
             password={loginPassword}
           />
           <RegisterArticle
             onChangeHandler={this.onChangeHandler}
             onClickHandler={this.onClickHandler}
-            onSubmitHandler={this.onSubmitHandler}
             email={email}
             password={regPassword}
+            responseKakao={this.responseKakao}
+            responseFail={this.responseFail}
           />
         </Section>
       </>
@@ -99,7 +118,7 @@ class LoginInput extends Component {
   }
 }
 
-export default LoginInput;
+export default Login;
 
 const Section = styled.section`
   display: flex;

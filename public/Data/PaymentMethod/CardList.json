@@ -1,0 +1,8 @@
+{
+  "CardList": [
+    { "method": "1번카드", "expire": "3/22" },
+    { "method": "2번카드", "expire": "3/22" },
+    { "method": "3번카드", "expire": "3/22" },
+    { "method": "4번카드", "expire": "3/22" }
+  ]
+}
