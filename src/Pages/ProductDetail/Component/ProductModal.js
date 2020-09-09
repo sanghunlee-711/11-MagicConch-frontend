@@ -2,20 +2,20 @@ import React from "react";
 import styled, { css } from "styled-components";
 import ProductSliderIn from "./ProductSliderIn";
 
-const ProductModal = ({ isModalOpen, close }) => {
+const ProductModal = ({ isModalOpen, close, imgList }) => {
   return (
     <>
       {isModalOpen && (
         <ModalWrap>
           <ModalBox>
             <ModalHeader>
-              <CountBox>1 of 10</CountBox>
+              <CountBox>1 of {imgList.length}</CountBox>
               <CloseBox onClick={close}>
                 <img src="https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/themes/kinfolk2020/assets/img/icons/svg/close.svg" />
               </CloseBox>
             </ModalHeader>
             <SliderIn>
-              <ProductSliderIn />
+              <ProductSliderIn imgList={imgList} />
             </SliderIn>
           </ModalBox>
         </ModalWrap>
@@ -45,7 +45,8 @@ const ModalBox = styled.section`
 
 const ModalHeader = styled.div`
   ${(props) => props.theme.setSize("100%", "60px")}
-  ${(props) => props.theme.setFlex("space-between", "center", "row")}
+  ${(props) =>
+    props.theme.setFlex("space-between", "center", "row")}
   position: absolute;
   background-color: transparent;
 `;

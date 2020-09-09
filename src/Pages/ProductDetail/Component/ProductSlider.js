@@ -1,29 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import SliderCard from "./SliderCard";
 import ProductModal from "./ProductModal";
 
-const ProductSlider = () => {
-  const TOTAL = 2;
+const ProductSlider = ({ imgList }) => {
+  const TOTAL = imgList.length - 1;
+  const slideRef = useRef(null);
   const [nowSlide, setNowSlide] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const slideRef = useRef(null);
 
-  const nextBtn = () => {
-    if (nowSlide >= TOTAL) {
-      setNowSlide(0);
-    } else {
-      setNowSlide(nowSlide + 1);
-    }
-  };
+  const nextBtn = () => setNowSlide(nowSlide >= TOTAL ? 0 : nowSlide + 1);
 
-  const prevBtn = () => {
-    if (nowSlide === 0) {
-      setNowSlide(0);
-    } else {
-      setNowSlide(nowSlide - 1);
-    }
-  };
+  const prevBtn = () => setNowSlide(!nowSlide ? 0 : nowSlide - 1);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -40,16 +28,20 @@ const ProductSlider = () => {
 
   return (
     <>
-      <ProductModal isModalOpen={isModalOpen} close={closeModal} />
+      <ProductModal
+        isModalOpen={isModalOpen}
+        close={closeModal}
+        imgList={imgList}
+      />
       <Slider>
         <SliderContainer>
           <BtnWrap>
             <PrevBtn onClick={prevBtn} />
             <NextBtn onClick={nextBtn} />
           </BtnWrap>
-          <SliderBox ref={slideRef}>
-            {INDEX.map((index) => {
-              return <SliderCard key={index} />;
+          <SliderBox ref={slideRef} num={nowSlide}>
+            {imgList.map((el, index) => {
+              return <SliderCard key={index} imageURL={el} />;
             })}
           </SliderBox>
           <div className="zoomImg" onClick={openModal} />
@@ -60,8 +52,6 @@ const ProductSlider = () => {
 };
 
 export default ProductSlider;
-
-const INDEX = [0, 1, 2];
 
 const Slider = styled.div`
   ${(props) => props.theme.setSize("70%", null)}
@@ -120,7 +110,7 @@ const SliderContainer = styled.div`
 `;
 
 const SliderBox = styled.div`
-  ${(props) => props.theme.setSize("100%", null)}
+  ${(props) => props.theme.setSize("100%", null)};
   display: flex;
   background-color: #f2f2f2;
 `;
