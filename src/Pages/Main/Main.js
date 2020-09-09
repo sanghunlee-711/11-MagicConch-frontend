@@ -90,6 +90,8 @@ const Mention = styled.span`
   display: block;
   padding-top: 80px;
   ${(props) => props.theme.setSize("100vw", "20vh")}
+  ${(props) => props.theme.setFont("18px", "20vh")}
+
   font-size: 18px;
   font-weight: 400;
   text-align: center;

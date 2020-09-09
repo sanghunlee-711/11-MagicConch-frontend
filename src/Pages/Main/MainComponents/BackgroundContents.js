@@ -23,6 +23,6 @@ const ScrollBackground = styled.section`
     position: absolute;
     width: 100%;
     height: 30vh;
-    background-color: white;
+    background-color: transparent;
   }
 `;
