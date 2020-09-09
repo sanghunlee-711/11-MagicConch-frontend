@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import "../../Styles/common.scss";
 
 class ProductComponent extends Component {
@@ -14,13 +14,12 @@ class ProductComponent extends Component {
       keys,
     } = this.props;
 
-  return (
-    <>
+    return (
       <Itembox>
-        <Link to={`/productDetail/${keys}`} style={{ color: "#000" }}>
+        <Link to={`/productDetail/${keys}`}>
           <div className="ListBox">
             <ItemImage>
-              <img src={outer_image_url} />
+              <img alt="" src={outer_image_url} />
             </ItemImage>
             <Item>{product_type}</Item>
             <ItemText>{outer_tag}</ItemText>
@@ -28,7 +27,6 @@ class ProductComponent extends Component {
           </div>
         </Link>
       </Itembox>
-    </>
     );
   }
 }
@@ -38,7 +36,10 @@ export default ProductComponent;
 const Itembox = styled.li`
   ${(props) => props.theme.setSize("25%", null)}
   padding: 0 15px 45px 15px;
-  color: #000;
+
+  a {
+    color: #000;
+  }
 `;
 
 const ItemImage = styled.figure`

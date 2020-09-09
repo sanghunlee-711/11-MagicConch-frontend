@@ -2,18 +2,7 @@ import React, { Component } from "react";
 import styled, { css } from "styled-components";
 
 class Category extends Component {
-  state = {
-    activeTab: 0,
-  };
-
-  handleTab = (index) => {
-    this.setState({
-      activeTab: index,
-    });
-  };
-
   render() {
-    const { data } = this.props;
     return (
       <TabBox>
         <TabList>
@@ -22,8 +11,10 @@ class Category extends Component {
             return (
               <Tabitem
                 key={index}
-                onClick={() => this.handleTab(index)}
-                activeTab={this.state.activeTab}
+                onClick={() =>
+                  this.props.handleTab(el.quary, index, el.dictionary)
+                }
+                activeTab={this.props.activeTab}
                 index={index}
                 name={el.name}
               >
@@ -40,11 +31,26 @@ class Category extends Component {
 export default Category;
 
 const CATEGORY_DATA = [
-  { title: "ALL", name: "ALL" },
-  { title: "ART PRINTS", name: "ART PRINTS" },
-  { title: "BOOKS", name: "BOOKS" },
-  { title: "MAGAZINE", name: "MAGAZINE" },
-  { title: "SUBSCRIPTIONS", name: "SUBSCRIPTIONS" },
+  { title: "ALL", name: "ALL", quary: "", dictionary: "All" },
+  {
+    title: "ART PRINTS",
+    name: "ART PRINTS",
+    quary: "art-prints",
+    dictionary: "Artprints",
+  },
+  { title: "BOOKS", name: "BOOKS", quary: "books", dictionary: "Books" },
+  {
+    title: "MAGAZINE",
+    name: "MAGAZINE",
+    quary: "magazines",
+    dictionary: "Magazines",
+  },
+  {
+    title: "SUBSCRIPTIONS",
+    name: "SUBSCRIPTIONS",
+    quary: "",
+    dictionary: "Subcriptions",
+  },
 ];
 
 const TabBox = styled.div`
@@ -57,7 +63,6 @@ const TabList = styled.ul`
   ${(props) => props.theme.setFlex(null, null, "row")}
 
   li {
-    
     font-size: 13px;
     font-weight: normal;
     letter-spacing: 1.5px;

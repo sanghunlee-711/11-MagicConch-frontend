@@ -1,27 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import SliderCard from "./SliderCard";
 
-const ProductSlider = () => {
-  const total = 2;
-  const [nowSlide, setNowSlide] = useState(0);
+const ProductSlider = ({ imgList }) => {
+  const TOTAL = imgList.length - 1;
   const slideRef = useRef(null);
+  const [nowSlide, setNowSlide] = useState(0);
 
-  const nextBtn = () => {
-    if (nowSlide >= total) {
-      setNowSlide(0);
-    } else {
-      setNowSlide(nowSlide + 1);
-    }
-  };
+  const nextBtn = () => setNowSlide(nowSlide >= TOTAL ? 0 : nowSlide + 1);
 
-  const prevBtn = () => {
-    if (nowSlide === 0) {
-      setNowSlide(0);
-    } else {
-      setNowSlide(nowSlide - 1);
-    }
-  };
+  const prevBtn = () => setNowSlide(!nowSlide ? 0 : nowSlide - 1);
 
   useEffect(() => {
     slideRef.current.style.transition = "all 0.5s linear";
@@ -39,7 +27,7 @@ const ProductSlider = () => {
       <Slider>
         <SliderContainer>
           <SliderBox ref={slideRef}>
-            {index.map((index) => {
+            {imgList.map((index) => {
               return <SliderCard key={index} />;
             })}
           </SliderBox>
@@ -57,17 +45,8 @@ const ProductSlider = () => {
 
 export default ProductSlider;
 
-const index = [0, 1, 2];
-
 const Slider = styled.div`
   ${(props) => props.theme.setSize("60%", null)}
-`;
-
-const BtnWrap = styled.div`
-${(props) => props.theme.setSize("100%", "100%")}
-  position: absolute;
-  left: 0;
-  top: 0;
 `;
 
 const PrevBtn = styled.div`

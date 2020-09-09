@@ -1,32 +1,40 @@
 import React, { Component } from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import Category from "./Component/Category";
 import ProductCard from "./ProductCard";
 
 class ProductList extends Component {
   state = {
-    tabOn: 0,
-    productlist: [],
-  };
-
-  handleTab = (e) => {
-    e.preventDefault();
+    activeTab: 0,
+    productAll: [],
   };
 
   componentDidMount() {
-    fetch("/data/product.json")
+    fetch(`http://127.0.0.1:8000/categories/shop`)
       .then((res) => res.json())
-      .then((res) => this.setState({ productlist: res.products }));
+      .then((res) => this.setState({ productAll: res.Products }));
   }
 
+  handleTab = (quary, index, dictionary) => {
+    const temp = quary;
+    fetch(`http://127.0.0.1:8000/categories/shop/${temp}`)
+      .then((res) => res.json())
+      .then((res) =>
+        this.setState({
+          productAll: res[dictionary],
+        })
+      );
+    this.setState({ activeTab: index });
+  };
+
   render() {
-    const { productlist, tabOn } = this.state;
+    const { productAll, activeTab } = this.state;
     return (
       <ItemList>
         <div>
-          <Category />
+          <Category handleTab={this.handleTab} activeTab={activeTab} />
         </div>
-        <ProductCard list={productlist} tabOn={tabOn} />
+        <ProductCard list={productAll} />
       </ItemList>
     );
   }
