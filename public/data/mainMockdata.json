@@ -214,134 +214,187 @@
       "src": "https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/09/K37_SpreadSliders_2020_008-1600x1067.jpg"
     }
   ],
-  "Design": [
+
+  "Fashion": [
     {
-      "id": 1,
-      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/Downsizing_03-700x700.jpg', 'https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/Downsizing_03-150x150.jpg', 'https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/Downsizing_03-350x350.jpg', 'https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/Downsizing_03-100x100.jpg']",
+      "id": 150,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/Rock_Steady_02-700x700.jpg', ' https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/Rock_Steady_02-150x150.jpg', ' https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/Rock_Steady_02-350x350.jpg', ' https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/Rock_Steady_02-100x100.jpg']",
       "tag": "Feature",
-      "title": "Downsizing",
-      "description": "Unable to travel during lockdown, architects Salem Charabi & Rasmus Stroyberg decided to recreate a favorite building.",
+      "title": "Rock Steady",
+      "description": "A breath of fresh air amid the ancient Stone Forest of southwestern China. ",
       "published_data": "None",
-      "category_id": 1
+      "category_id": 2
     },
     {
-      "id": 2,
-      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/AtHomewith_Nanushka_01-350x234.jpg']",
+      "id": 151,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/Material_Girl_01-350x452.jpg']",
       "tag": "Issue 37",
-      "title": "At Home With: Nanushka",
-      "description": "Meet the bold couple who took their Budapest brand global.",
+      "title": "Material Girl",
+      "description": "The most interesting people, stories and haircuts all have layers. This fall, so does your wardrobe.",
       "published_data": "10/08/2020",
-      "category_id": 1
-    }
-  ],
-  "DesignMock": [
-    {
-      "id": 1,
-      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/Downsizing_03-700x700.jpg', 'https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/Downsizing_03-150x150.jpg', 'https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/Downsizing_03-350x350.jpg', 'https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/Downsizing_03-100x100.jpg']",
-      "tag": "Feature",
-      "title": "Downsizing",
-      "description": "Unable to travel during lockdown, architects Salem Charabi & Rasmus Stroyberg decided to recreate a favorite building.",
-      "published_data": "None",
-      "category_id": 1
+      "category_id": 2
     },
     {
-      "id": 2,
-      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/AtHomewith_Nanushka_01-350x234.jpg']",
+      "id": 152,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/The_Click_Farm_01-350x450.jpg']",
       "tag": "Issue 37",
-      "title": "At Home With: Nanushka",
-      "description": "Meet the bold couple who took their Budapest brand global.",
-      "published_data": "10/08/2020",
-      "category_id": 1
+      "title": "The Click Farm",
+      "description": "Meet the influencers, and owners, fighting like cats and dogs for your likes.",
+      "published_data": "08/08/2020",
+      "category_id": 2
     },
     {
-      "id": 3,
-      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/07/Casa_Scatturin-350x233.jpg']",
-      "tag": "Issue 37",
-      "title": "Casa Scatturin",
-      "description": "Law and domestic order in Carlo Scarpa’s Venice.",
-      "published_data": "10/08/2020",
-      "category_id": 1
-    },
-    {
-      "id": 4,
-      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/04/Alexis_Sablone_01-350x233.jpg']",
+      "id": 153,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/04/GameFace-350x453.jpg']",
       "tag": "Issue 36",
-      "title": "Alexis Sablone",
-      "description": "Not many architects skate for their country, and not many skateboarders design the parks they skate in.",
+      "title": "Game Face",
+      "description": "Keep your eye on the prize—and the ball.",
       "published_data": "29/04/2020",
-      "category_id": 1
+      "category_id": 2
     },
     {
-      "id": 5,
-      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/04/AtWorkWith_Hariri__Hariri_02-350x524.jpg']",
+      "id": 154,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/04/Second_Time_Around_01-350x450.jpg']",
       "tag": "Issue 36",
-      "title": "At Work With: Hariri & Hariri",
-      "description": "Sisters Gisue Hariri and Mojgan Hariri have always been “partners in crime.\" Charles Shafaieh meets them at their New York architecture studio.",
+      "title": "Second Time Around",
+      "description": "A dance party for one spirals into another dimension.",
       "published_data": "29/04/2020",
-      "category_id": 1
+      "category_id": 2
     },
     {
-      "id": 6,
-      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/02/Last_Night_01-350x525.jpg']",
+      "id": 155,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/04/Island_Time_03-350x525.jpg']",
+      "tag": "Issue 36",
+      "title": "Island Time",
+      "description": "Stretching out the summer on Madeira’s volcanic coastline.",
+      "published_data": "29/04/2020",
+      "category_id": 2
+    },
+    {
+      "id": 156,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/04/TOAST_SlowSounds_005-350x280.jpg']",
+      "tag": "",
+      "title": "Slow Sound",
+      "description": "Meet the musicians creating seasonal soundscapes from color swatches, in partnership with lifestyle brand Toast.",
+      "published_data": "23/04/2020",
+      "category_id": 2
+    },
+    {
+      "id": 157,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/Les_Jardins_de_Marqueyssac_01-350x233.jpg']",
       "tag": "Issue 35",
-      "title": "Last Night",
-      "description": "What did Danish design gallerist Rune Bruun Johansen do with his evening?",
+      "title": "Les Jardins de Marqueyssac",
+      "description": "In these maze-like gardens, getting lost turns out to be the most sensible path to take.",
       "published_data": "06/02/2020",
-      "category_id": 1
+      "category_id": 2
     },
     {
-      "id": 7,
-      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/Spaceship_House-350x491.jpg']",
+      "id": 158,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/Maryam_01-350x524.jpg']",
       "tag": "Issue 35",
-      "title": "Spaceship House",
-      "description": "The mothership of Googie architecture.",
+      "title": "Maryam Nassirzadeh",
+      "description": "The leader of New York’s most admired fashion set is just a cuddlebug who really, really likes her friends.",
       "published_data": "06/02/2020",
-      "category_id": 1
+      "category_id": 2
     },
     {
-      "id": 8,
+      "id": 159,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/The_Borrowers_01-350x271.jpg']",
+      "tag": "Issue 35",
+      "title": "The Borrowers",
+      "description": "They’re too big for their boots, and raiding your closet.",
+      "published_data": "06/02/2020",
+      "category_id": 2
+    },
+    {
+      "id": 160,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/Soft_Strokes_01-350x530.jpg']",
+      "tag": "Issue 35",
+      "title": "Soft Strokes",
+      "description": "Fashion often looks to art for inspiration, so why not the other way round?",
+      "published_data": "06/02/2020",
+      "category_id": 2
+    },
+    {
+      "id": 161,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/Lana_Turner_01-350x525.jpg']",
+      "tag": "Issue 35",
+      "title": "Lana Turner",
+      "description": "A short stroll—and several wardrobe changes—with a woman who’s never tired of New York.",
+      "published_data": "06/02/2020",
+      "category_id": 2
+    },
+    {
+      "id": 162,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/Peripheral_Visions_01-350x450.jpg']",
+      "tag": "Issue 35",
+      "title": "Peripheral Visions",
+      "description": "An abstracted exploration of cloth and color, produced in partnership with HaaT.",
+      "published_data": "06/02/2020",
+      "category_id": 2
+    },
+    {
+      "id": 163,
       "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/Alexandre_Mattiussi_01-350x452.jpg']",
       "tag": "Issue 35",
       "title": "Alexandre Mattiussi",
       "description": "Meet the French fashion designer who just wants to be friends.",
       "published_data": "06/02/2020",
-      "category_id": 1
+      "category_id": 2
     },
     {
-      "id": 9,
-      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/Bad_Idea_Disposable_Clothes-350x471.jpg']",
-      "tag": "Issue 35",
-      "title": "Bad Idea: Disposable Clothes",
-      "description": "A recollection of the terrible trend for paper dresses.",
-      "published_data": "06/02/2020",
-      "category_id": 1
-    },
-    {
-      "id": 10,
-      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/mutina_build_01-793x1024-350x452.jpg']",
+      "id": 164,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2019/12/kinfolk-the_right_frame_001_1024-768-350x467.jpg']",
       "tag": "",
-      "title": "Stack the Odds",
-      "description": "A sculptural take on tiles, produced in partnership with Mutina.",
-      "published_data": "07/11/2019",
-      "category_id": 1
+      "title": "Framing Faces",
+      "description": "Good eyewear casts a long shadow.",
+      "published_data": "16/12/2019",
+      "category_id": 2
     },
     {
-      "id": 10,
-      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/mutina_build_01-793x1024-350x452.jpg']",
-      "tag": "",
-      "title": "Stack the Odds",
-      "description": "A sculptural take on tiles, produced in partnership with Mutina.",
-      "published_data": "07/11/2019",
-      "category_id": 1
+      "id": 165,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/Things_Fall_Apart_01-350x450.jpg']",
+      "tag": "Issue 34",
+      "title": "Things Fall Apart",
+      "description": "Love’s a well-learned pas de deux. Even if the feelings fade, the steps still feel familiar.",
+      "published_data": "06/11/2019",
+      "category_id": 2
     },
     {
-      "id": 10,
-      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/mutina_build_01-793x1024-350x452.jpg']",
+      "id": 166,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/The_Furthest_Dawn_06-350x233.jpg']",
+      "tag": "Issue 34",
+      "title": "The Furthest Dawn",
+      "description": "Under the low-hanging orb of an alien landscape, first light and a strange awakening.",
+      "published_data": "06/11/2019",
+      "category_id": 2
+    },
+    {
+      "id": 167,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/Makiko_Minagawa-350x506.jpg']",
+      "tag": "Issue 34",
+      "title": "HaaT: Makiko Minagawa",
+      "description": "In partnership with HaaT, creative director Makiko Minagawa talks tradition, textiles and a half-century of collaborating with Issey Miyake.",
+      "published_data": "06/11/2019",
+      "category_id": 2
+    },
+    {
+      "id": 168,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/Carl_Jan_Cruz-350x525.jpg']",
+      "tag": "Issue 34",
+      "title": "Carl Jan Cruz",
+      "description": "A fashion dispatch from the Philippine capital.",
+      "published_data": "29/10/2019",
+      "category_id": 2
+    },
+    {
+      "id": 169,
+      "image_url": "['https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2019/09/Kinfolk_Fritz-Hansen_Fred_cover_001_sRGB-350x438.jpg']",
       "tag": "",
-      "title": "Stack the Odds",
-      "description": "A sculptural take on tiles, produced in partnership with Mutina.",
-      "published_data": "07/11/2019",
-      "category_id": 1
+      "title": "The Hot Seat",
+      "description": "Like fashion, chairs can be sumptuous or simple, whimsical or practical, a frill or a necessity.",
+      "published_data": "03/10/2019",
+      "category_id": 2
     }
   ]
 }
