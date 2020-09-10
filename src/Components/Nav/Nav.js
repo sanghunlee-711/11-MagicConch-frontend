@@ -1,9 +1,52 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useRef } from "react";
+import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
 import SVG from "./Svg";
+import CategoryNav from "./CategoryNav";
+import CartNav from "./CartNav";
+import KinfolkButton from "../Button/KinfolkButton";
+import SearchModal from "./SearchModal";
+import useScrollLogo from "./LogoScroll";
 
-export default function Nav() {
+function Nav(props) {
+  const [SearchModalActive, setSearchModalActive] = useState(false);
+  const [CategoryNavActive, setCategoryNavActive] = useState(false);
+  const [CartActive, setCartActive] = useState(false);
+  const [FilteredValue, setFilteredValue] = useState("");
+  const ScrollLogoMatrix = useScrollLogo();
+
+  const ShowCart = () => {
+    window.addEventListener("scroll", () => {
+      setCartActive(false);
+    });
+
+    CartActive ? setCartActive(false) : setCartActive(true);
+  };
+
+  const ShowSearch = () => {
+    SearchModalActive
+      ? setSearchModalActive(false)
+      : setSearchModalActive(true);
+  };
+
+  const ShowCategory = () => {
+    CategoryNavActive
+      ? setCategoryNavActive(false)
+      : setCategoryNavActive(true);
+  };
+
+  const SearchFilter = (e) => {
+    setFilteredValue(e.target.value);
+  };
+
+  const search = useHistory();
+  const goSearchPage = (e) => {
+    if (e.keyCode === 13) {
+      setSearchModalActive(false);
+      search.push(`/search/${FilteredValue}`);
+    }
+  };
+
   return (
     <NavContents>
       <NavWrapper>
@@ -24,11 +67,12 @@ export default function Nav() {
           <TitleLogo
             alt="TitleLogo"
             src="https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/themes/kinfolk2020/assets/img/logo.svg"
+            {...ScrollLogoMatrix}
           />
         </Link>
         <NavRightButton>
           <li>
-            <CartMark>
+            <CartMark onClick={ShowCart}>
               <SVG
                 viewBox="-4 -4 30 30"
                 width="27px"
@@ -45,7 +89,7 @@ export default function Nav() {
             </CartMark>
           </li>
           <li>
-            <SearchMark>
+            <SearchMark onClick={ShowSearch}>
               <SVG
                 fill="#000000"
                 viewBox="0 0 30 30"
@@ -56,7 +100,7 @@ export default function Nav() {
             </SearchMark>
           </li>
           <li>
-            <BurgerMark>
+            <BurgerMark onClick={ShowCategory}>
               <span />
               <span />
               <span />
@@ -64,9 +108,24 @@ export default function Nav() {
           </li>
         </NavRightButton>
       </NavWrapper>
+      <SearchModal
+        setSearchModalActive={setSearchModalActive}
+        SearchFilter={SearchFilter}
+        setFilteredValue={setFilteredValue}
+        FilteredValue={FilteredValue}
+        goSearchPage={goSearchPage}
+        SearchModalActive={SearchModalActive}
+      />
+      <CategoryNav
+        setCategoryNavActive={setCategoryNavActive}
+        CategoryNavActive={CategoryNavActive}
+      />
+      <CartNav CartActive={CartActive} />
     </NavContents>
   );
 }
+
+export default Nav;
 
 const NavContents = styled.nav`
   position: fixed;
@@ -83,22 +142,6 @@ const NavWrapper = styled.div`
   ${(props) => props.theme.setFlex("space-between", "center")}
   padding: 25px 0;
   border-bottom: 2px solid black;
-`;
-
-const KinfolkButton = styled(Link)`
-  margin: auto;
-  padding: 10% 25%;
-  border: 1px solid black;
-  font-size: 18px;
-  text-align: center;
-  cursor: pointer;
-  transition: 200ms linear;
-  ${(props) => props.theme.footerHover}
-  &:hover {
-    transition: ease 250ms color;
-    color: white;
-    background-color: black;
-  }
 `;
 
 const NavRightButton = styled.ul`
@@ -121,7 +164,10 @@ const NavLeftButton = styled(NavRightButton)`
 `;
 
 const TitleLogo = styled.img`
-  ${(props) => props.theme.setSize("100%", "23px")}
+  transform: matrix(5, 0, 0, 5, 0, 190);
+  position: absolute;
+  right: 44%;
+  ${(props) => props.theme.setSize(null, "23px")}
 `;
 
 const CartMark = styled.button`

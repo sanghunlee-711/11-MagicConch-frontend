@@ -21,7 +21,6 @@ export default function FullSizeContents(props) {
 const FullsizePhoto = styled.div`
   position: relative;
   ${(props) => props.theme.setSize("100vw", "100vh")};
-  margin: 0 -2%;
   padding-top: 22%;
 `;
 

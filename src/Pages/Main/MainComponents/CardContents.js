@@ -2,21 +2,36 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-function CardContents(props) {
+function CardContents({
+  width,
+  height,
+  padding,
+  borderLeft,
+  src,
+  issue,
+  title,
+  explanation,
+}) {
   return (
-    <EachContents width={props.width}>
+    <EachContents
+      width={props.width}
+      height={props.height}
+      borderLeft={props.borderLeft}
+      minWidth={props.minWidth}
+      padding={props.padding}
+    >
       <Link to="/" href="https://www.kinfolk.com/at-home-with-kinfolk/">
-        <img src={props.src} alt="AtHomeWithKinfolk_IG_01" />
+        <img src={src} alt="AtHomeWithKinfolk_IG_01" />
       </Link>
       <ContentsIntro>
         <div>
-          <span>{props.issue}</span>
+          <span>{issue}</span>
           <span>
-            <Link to="/">{props.title}</Link>
+            <Link to="/">{title}</Link>
           </span>
         </div>
         <p>
-          {props.explanation ||
+          {explanation ||
             "Join us for the first in a new series of experiential exhibitions."}
         </p>
       </ContentsIntro>
@@ -26,7 +41,15 @@ function CardContents(props) {
 
 const EachContents = styled.div`
   width: ${(props) => props.width || "100%"};
-  padding: 2%;
+  height: ${(props) => props.height || "100%"};
+<<<<<<< HEAD
+  border-left: ${(props) => props.borderLeft};
+  min-width: ${(props) => props.minWidth};
+  padding: ${(props) => props.padding || "2%"};
+=======
+  padding: ${(props) => props.padding || "2%"};
+  border-left: ${(props) => props.borderLeft};
+>>>>>>> d454eb3... Refactor: 수정필요사항 완료
 
   img {
     display: block;

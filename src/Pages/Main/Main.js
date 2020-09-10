@@ -98,6 +98,7 @@ const Mention = styled.span`
 `;
 
 const MainContents = styled.section`
+  margin-top: 250px;
   position: relative;
 `;
 
