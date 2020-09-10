@@ -9,45 +9,74 @@ class Login extends Component {
   constructor() {
     super();
     this.state = {
-      data: "",
+      login: true,
       errorMessage: "",
-      userID: "",
+      loginEmail: "",
       loginPassword: "",
-      email: "",
+      regEmail: "",
       regPassword: "",
       isAutoLogin: false,
       isSubcriptEmail: false,
-      id: "",
-      name: "",
-      provider: "",
     };
   }
 
   responseKakao = (res) => {
-    console.log("success");
-    console.log(res);
-    this.setState({
-      id: res.profile.id,
-      name: res.profile.properties,
-      provider: "kakao",
-    });
-    fetch("http://127.0.0.1:8000/user/kakao_login", {
+    fetch("http://18.216.31.23:8000/user/kakao_login", {
       method: "POST",
-      head: {
+      headers: {
         Authorization: res.response.access_token,
       },
     })
-      .then((rps) => rps.json())
-      .then((rps) => console.log(rps));
+      .then((res) => res.json())
+      .then((res) => localStorage.setItem("login", JSON.stringify(res.token)));
   };
 
-  responseFail = (err) => {};
+  responseFail = (err) => {
+    console.log(err);
+  };
+
+  onClickHandler = (event) => {
+    const { loginEmail, loginPassword, regEmail, regPassword } = this.state;
+    let emailTemp, passwordTemp;
+
+    if (event === "Register") {
+      emailTemp = regEmail;
+      passwordTemp = regPassword;
+      fetch("http://18.216.31.23:8000/user/sign_up", {
+        method: "POST",
+        body: JSON.stringify({
+          email: emailTemp,
+          password: passwordTemp,
+        }),
+      })
+        .then((res) => res.json())
+        .then((res) => res.message === "");
+    }
+    if (event === "login") {
+      emailTemp = loginEmail;
+      passwordTemp = loginPassword;
+    }
+
+    fetch("http://18.216.31.23:8000/user/login", {
+      method: "POST",
+      body: JSON.stringify({
+        email: emailTemp,
+        password: passwordTemp,
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) =>
+        res.token
+          ? localStorage.setItem("login", JSON.stringify(res.token))
+          : this.setState({ errorMessage: res.message })
+      );
+  };
 
   onChangeHandler = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  onClickHandler = (event) => {
+  checkoBoxHandler = (event) => {
     const { isAutoLogin, isSubcriptEmail } = this.state;
     const isLogin = event === "Login";
 
@@ -56,61 +85,42 @@ class Login extends Component {
       : this.setState({ isSubcriptEmail: !isSubcriptEmail });
   };
 
-  onClickHandler = (event) => {
-    const { userID, loginPassword, email, regPassword } = this.state;
-
-    if (event === "login") {
-      fetch(`${config}/login`, {
-        method: "POST",
-        body: JSON.stringify({
-          email: userID,
-          password: loginPassword,
-        }),
-      })
-        .then((res) => res.json())
-        .then((res) =>
-          res.token
-            ? localStorage.setItem({ access_token: res.token })
-            : this.setState({ errorMessage: res.message })
-        );
-    } else {
-      fetch(`${config}/sign_up`, {
-        method: "POST",
-        body: JSON.stringify({
-          email: email,
-          password: regPassword,
-        }),
-      })
-        .then((res) => res.json())
-        .then((res) => this.setState({ errorMessage: res.message }));
-    }
-  };
-
   render() {
     const {
       errorMessage,
-      userID,
+      loginEmail,
       loginPassword,
-      email,
+      regEmail,
       regPassword,
     } = this.state;
+
+    const {
+      onChangeHandler,
+      onClickHandler,
+      responseKakao,
+      responseFail,
+      checkoBoxHandler,
+    } = this;
+
     return (
       <>
         {errorMessage && <ErrorTextBox printText={errorMessage} />}
         <Section>
           <LoginArticle
-            onChangeHandler={this.onChangeHandler}
-            onClickHandler={this.onClickHandler}
-            userID={userID}
+            onChangeHandler={onChangeHandler}
+            onClickHandler={onClickHandler}
+            checkoBoxHandler={checkoBoxHandler}
+            loginEmail={loginEmail}
             password={loginPassword}
           />
           <RegisterArticle
-            onChangeHandler={this.onChangeHandler}
-            onClickHandler={this.onClickHandler}
-            email={email}
+            onChangeHandler={onChangeHandler}
+            onClickHandler={onClickHandler}
+            checkoBoxHandler={checkoBoxHandler}
+            regEmail={regEmail}
             password={regPassword}
-            responseKakao={this.responseKakao}
-            responseFail={this.responseFail}
+            responseKakao={responseKakao}
+            responseFail={responseFail}
           />
         </Section>
       </>

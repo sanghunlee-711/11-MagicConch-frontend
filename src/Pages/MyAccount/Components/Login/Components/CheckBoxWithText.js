@@ -3,10 +3,10 @@ import styled from "styled-components";
 
 class CheckBoxWithText extends Component {
   render() {
-    const { onClickHandler, text } = this.props;
+    const { checkoBoxHandler, text } = this.props;
     return (
       <CheckBoxContainer>
-        <input type="checkbox" onClick={onClickHandler} />
+        <input type="checkbox" onClick={checkoBoxHandler} />
         <Text>{text}</Text>
       </CheckBoxContainer>
     );
