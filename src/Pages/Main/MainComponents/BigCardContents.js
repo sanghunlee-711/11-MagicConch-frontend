@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-function BigCardContents({ title }) {
+function BigCardContents({ issue, title, paragraph }) {
   return (
     <EachContents>
       <StickyWrapper>
@@ -14,17 +14,12 @@ function BigCardContents({ title }) {
         </Link>
         <ContentsIntro>
           <div>
-            <span>Issue 37</span>
+            <span>{issue || "Issue 37"}</span>
             <span>
-              <Link to="/">{title}</Link>
+              <Link to="/">{title || "DownSizing"}</Link>
             </span>
           </div>
-          <p>
-            The importance of nature for both our personal wellbeing and global
-            prosperity has never been clearer. With a cautious return to the
-            great outdoors now on our shared horizon, Kinfolk heeds the enticing
-            call of the wild.
-          </p>
+          <p>{paragraph || SAMPLE_CONTEXT}</p>
         </ContentsIntro>
       </StickyWrapper>
     </EachContents>
@@ -57,7 +52,7 @@ const ContentsIntro = styled.div`
     span {
       margin: 10px 0;
       ${(props) => props.theme.footerHover};
-      span:nth-child(1) {
+      &:nth-child(2) {
         font-size: 70px;
       }
     }
@@ -70,3 +65,6 @@ const ContentsIntro = styled.div`
 `;
 
 export default BigCardContents;
+
+const SAMPLE_CONTEXT =
+  "The importance of nature for both our personal wellbeing and global prosperity has never been clearer. With a cautious return to the great outdoors now on our shared horizon, Kinfolk heeds the enticing call of the wild.";

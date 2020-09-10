@@ -11,14 +11,15 @@ function CardContents({
   issue,
   title,
   explanation,
+  minWidth,
 }) {
   return (
     <EachContents
-      width={props.width}
-      height={props.height}
-      borderLeft={props.borderLeft}
-      minWidth={props.minWidth}
-      padding={props.padding}
+      width={width}
+      height={height}
+      borderLeft={borderLeft}
+      minWidth={minWidth}
+      padding={padding}
     >
       <Link to="/" href="https://www.kinfolk.com/at-home-with-kinfolk/">
         <img src={src} alt="AtHomeWithKinfolk_IG_01" />
@@ -42,14 +43,9 @@ function CardContents({
 const EachContents = styled.div`
   width: ${(props) => props.width || "100%"};
   height: ${(props) => props.height || "100%"};
-<<<<<<< HEAD
   border-left: ${(props) => props.borderLeft};
   min-width: ${(props) => props.minWidth};
   padding: ${(props) => props.padding || "2%"};
-=======
-  padding: ${(props) => props.padding || "2%"};
-  border-left: ${(props) => props.borderLeft};
->>>>>>> d454eb3... Refactor: 수정필요사항 완료
 
   img {
     display: block;

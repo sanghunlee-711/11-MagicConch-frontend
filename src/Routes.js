@@ -9,6 +9,7 @@ import Search from "./Pages/Search/Search";
 import MyAccount from "./Pages/MyAccount/MyAccount";
 import Cart from "./Pages/Cart/Cart";
 import Contents from "./Components/Contents/Contents";
+import Design from "./Pages/Design/Design";
 import "./Styles/common.scss";
 import "./Styles/reset.scss";
 
@@ -26,6 +27,7 @@ class Routes extends Component {
           <Route exact path="/my-account/:id" component={MyAccount} />
           <Route exact path="/cart" component={Cart} />
           <Route exact path="/search/:search" component={Search} />
+          <Route exact path="/design" component={Design} />
         </Switch>
         <Footer />
       </Router>
