@@ -21,4 +21,5 @@ export default function ThreeCardContents({ threeCardData }) {
 
 const ContentsWrapper = styled.section`
   display: flex;
+  margin: 3% 0;
 `;

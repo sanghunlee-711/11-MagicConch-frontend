@@ -10,6 +10,8 @@ import TwoCardContents from "./MainComponents/TwoCardContents";
 import ThreeCardContents from "./MainComponents/ThreeCardContents";
 import PopularContents from "./MainComponents/PopularContents";
 import BigCardContents from "./MainComponents/BigCardContents";
+import Nav from "../../Components/Nav/Nav";
+import Footer from "../../Components/Footer/Footer";
 
 function Main() {
   const [data, setData] = useState([]);
@@ -22,6 +24,14 @@ function Main() {
   } = data;
   const MainBackRef = useRef(null);
   const backgroundRef = useRef(null);
+  const TOTAL_SLIDES = BookPhoto && BookPhoto.length;
+  const [slideBook, setSlideBook] = useState([BookPhoto]);
+  const slidePic = BookPhoto;
+  let firstChild = slidePic && slidePic.firstElementChild;
+  let lastChild = slidePic && slidePic.lastElementChild;
+
+  const [currentSlider, setCurrentSlider] = useState(1);
+  const slideRef = useRef(null);
 
   useEffect(() => {
     fetch("/data/mainMockdata.json")
@@ -29,8 +39,25 @@ function Main() {
       .then((res) => setData(res));
   }, []);
 
+  const nextSlide = () => {
+    if (currentSlider >= TOTAL_SLIDES) {
+      setCurrentSlider(0);
+    } else {
+      setCurrentSlider(currentSlider + 1);
+    }
+  };
+
+  const PrevSlide = () => {
+    if (currentSlider === 0) {
+      setCurrentSlider(TOTAL_SLIDES);
+    } else {
+      setCurrentSlider(currentSlider - 1);
+    }
+  };
+
   return (
     <MainContents className="Main">
+      <Nav />
       <MainContainer>
         <FullSizeContents
           src="https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/Rock_Steady_01-2000x1333.jpg"
@@ -47,6 +74,7 @@ function Main() {
                   key={index}
                   index={index}
                   width={el.width}
+                  height="615.953px"
                   src={el.src}
                   issue={el.issue}
                   title={el.title}
@@ -60,7 +88,16 @@ function Main() {
           <BackgroundContents />
         </div>
         <Mention>Current Issue</Mention>
-        <SlideCotents BookPhoto={BookPhoto} />
+        <SlideCotents
+          BookPhoto={BookPhoto}
+          slideBook={slideBook}
+          currentSlider={currentSlider}
+          setCurrentSlider={setCurrentSlider}
+          nextSlide={nextSlide}
+          PrevSlide={PrevSlide}
+          slideRef={slideRef}
+          TOTAL_SLIDES={TOTAL_SLIDES}
+        />
         <ObjectContents objData={objectContents} />
         <FullSizeContents
           src="https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/07/AtHomeWithKinfolk_web_02-2000x1500.jpg"
@@ -82,6 +119,7 @@ function Main() {
         <ThreeCardContents threeCardData={threeCardContents} />
         <PopularContents popularData={popularContents} />
       </MainContainer>
+      <Footer />
     </MainContents>
   );
 }

@@ -18,7 +18,7 @@ export default function CategoryNav({
           <ul>
             {CATEGORY_SET.ArtCategory.map((el) => (
               <li>
-                <Link to="/">{el}</Link>
+                <Link to="/design">{el}</Link>
               </li>
             ))}
           </ul>
@@ -42,7 +42,7 @@ export default function CategoryNav({
           </ul>
         </Sns>
         <ButtonWrapper>
-          <KinfolkButton>Log In/Register</KinfolkButton>
+          <KinfolkButton to="/login">Log In/Register</KinfolkButton>
           <KinfolkButton>Subscribe</KinfolkButton>
         </ButtonWrapper>
       </CategoryNavContainer>

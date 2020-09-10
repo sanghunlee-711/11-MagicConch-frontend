@@ -1,26 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
-export default function SlideCotents(props) {
-  const TOTAL_SLIDES = props.BookPhoto && props.BookPhoto.length;
-  const [currentSlider, setCurrentSlider] = useState(1);
-  const slideRef = useRef(null);
+import KinfolkButton from "../../../Components/Button/KinfolkButton";
 
-  const nextSlide = () => {
-    if (currentSlider >= TOTAL_SLIDES) {
-      setCurrentSlider(0);
-    } else {
-      setCurrentSlider(currentSlider + 1);
-    }
-  };
-
-  const PrevSlide = () => {
-    if (currentSlider === 0) {
-      setCurrentSlider(TOTAL_SLIDES);
-    } else {
-      setCurrentSlider(currentSlider - 1);
-    }
-  };
-
+export default function SlideCotents({
+  BookPhoto,
+  currentSlider,
+  setCurrentSlider,
+  nextSlide,
+  PrevSlide,
+  slideRef,
+  TOTAL_SLIDES,
+}) {
   useEffect(() => {
     if (slideRef) {
       slideRef.current.style.transition = "all 0.5s ease-in-out";
@@ -28,7 +18,7 @@ export default function SlideCotents(props) {
         (slideRef.current.clientWidth / TOTAL_SLIDES) * currentSlider
       }px)`;
     }
-  }, [TOTAL_SLIDES, currentSlider]);
+  }, [TOTAL_SLIDES, currentSlider, slideRef]);
 
   return (
     <div>
@@ -36,11 +26,11 @@ export default function SlideCotents(props) {
         <PrevSlideButton onClick={PrevSlide} />
         <BookPhotoWrapper>
           <BookPhotoBox ref={slideRef}>
-            {props.BookPhoto &&
-              props.BookPhoto.map((el, index) => (
-                <BookPhoto key={index}>
+            {BookPhoto &&
+              BookPhoto.map((el, index) => (
+                <BookPhotoSize key={index}>
                   <img alt="slidePhoto" src={el.src} />
-                </BookPhoto>
+                </BookPhotoSize>
               ))}
           </BookPhotoBox>
         </BookPhotoWrapper>
@@ -50,7 +40,7 @@ export default function SlideCotents(props) {
         <span>
           From wilderness to windowsill: Plant roots in the world around you.
         </span>
-        <button className="KinfolkButton">Buy Now</button>
+        <KinfolkButton>Buy Now</KinfolkButton>
       </NotionPart>
     </div>
   );
@@ -61,6 +51,7 @@ const SlideCotentsContainer = styled.section`
   position: relative;
   ${(props) => props.theme.setSize("100%", "70vh")}
   margin: 0 -2%;
+  font-family: ${(props) => props.theme.lora};
   overflow: hidden;
 `;
 
@@ -93,7 +84,7 @@ const BookPhotoBox = styled.div`
   width: 17260px;
 `;
 
-const BookPhoto = styled.div`
+const BookPhotoSize = styled.div`
   img {
     @media only screen and (min-width: 1920px) {
       width: 1151px;

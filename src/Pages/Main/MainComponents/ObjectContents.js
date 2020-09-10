@@ -24,7 +24,6 @@ export default function ObjectContents({ objData }) {
 
 const ObjectTitle = styled.span`
   width: 100vw;
-  border-top: 1px solid black;
   padding: 3.5%;
   ${(props) => props.theme.setFont("20px", "400")}
   text-align: center;
@@ -37,5 +36,6 @@ const ObjectContentsWrapper = styled.section`
 `;
 
 const CardWrapper = styled.div`
+  margin-bottom: 3%;
   ${(props) => props.theme.setFlex("space-between", "center")}
 `;
