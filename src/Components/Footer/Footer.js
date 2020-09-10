@@ -63,7 +63,6 @@ const FooterContents = styled.footer`
   bottom: 0;
   width: 100vw;
   ${(props) => props.theme.setSize("100vw")}
-  margin-top: 220px;
   padding: 0 2.5%;
   font-size: 16px;
   font-weight: 600;

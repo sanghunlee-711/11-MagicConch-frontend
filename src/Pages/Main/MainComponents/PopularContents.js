@@ -51,6 +51,7 @@ const CheckboxWrapper = styled.div`
   ${(props) => props.theme.setFlex("space-between", "center", "column")}
   width: 100vw;
   margin-top: 3%;
+  margin-bottom: 20%;
   background-color: none;
 
   span:nth-child(1) {

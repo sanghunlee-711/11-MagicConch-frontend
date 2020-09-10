@@ -63,13 +63,13 @@ function Nav(props) {
             </Link>
           </NavLeftButton>
         </div>
-        <Link to="/">
-          <TitleLogo
+        <LogoWrapper to="/">
+          <img
             alt="TitleLogo"
             src="https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/themes/kinfolk2020/assets/img/logo.svg"
             {...ScrollLogoMatrix}
           />
-        </Link>
+        </LogoWrapper>
         <NavRightButton>
           <li>
             <CartMark onClick={ShowCart}>
@@ -163,11 +163,11 @@ const NavLeftButton = styled(NavRightButton)`
   }
 `;
 
-const TitleLogo = styled.img`
-  transform: matrix(5, 0, 0, 5, 0, 190);
-  position: absolute;
-  right: 44%;
-  ${(props) => props.theme.setSize(null, "23px")}
+const LogoWrapper = styled(Link)`
+  margin-right: 10%;
+  img {
+    ${(props) => props.theme.setSize("100%", "23px")};
+  }
 `;
 
 const CartMark = styled.button`
