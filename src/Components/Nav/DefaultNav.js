@@ -67,9 +67,11 @@ function Nav(props) {
           <img
             alt="TitleLogo"
             src="https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/themes/kinfolk2020/assets/img/logo.svg"
-            {...ScrollLogoMatrix}
           />
         </LogoWrapper>
+        {/* <Link to="/">
+          <TitleLogo alt="TitleLogo" src="" />
+        </Link> */}
         <NavRightButton>
           <li>
             <CartMark onClick={ShowCart}>
@@ -141,6 +143,7 @@ const NavContents = styled.nav`
 const NavWrapper = styled.div`
   ${(props) => props.theme.setFlex("space-between", "center")}
   padding: 25px 0;
+  border-bottom: 2px solid black;
 `;
 
 const NavRightButton = styled.ul`
@@ -164,10 +167,11 @@ const NavLeftButton = styled(NavRightButton)`
 
 const LogoWrapper = styled(Link)`
   padding-right: 4%;
+
   img {
     position: relative;
     right: 44%;
-    ${(props) => props.theme.setSize(null, "23px")};
+    ${(props) => props.theme.setSize(null, "23px")}
   }
 `;
 

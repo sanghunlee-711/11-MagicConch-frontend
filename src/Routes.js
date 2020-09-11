@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Nav from "./Components/Nav/Nav";
-import Footer from "./Components/Footer/Footer";
 import Main from "./Pages/Main/Main";
 import ProductList from "./Pages/ProductList/ProductList";
 import ProductDetail from "./Pages/ProductDetail/ProductDetail";
@@ -10,6 +8,7 @@ import MyAccount from "./Pages/MyAccount/MyAccount";
 import Cart from "./Pages/Cart/Cart";
 import Contents from "./Components/Contents/Contents";
 import Design from "./Pages/Design/Design";
+import Fashion from "./Pages/Fashion/Fashion";
 import "./Styles/common.scss";
 import "./Styles/reset.scss";
 
@@ -17,7 +16,6 @@ class Routes extends Component {
   render() {
     return (
       <Router>
-        <Nav />
         <Switch>
           <Route exact path="/" component={Main} />
           <Route exact path="/contents" component={Contents} />
@@ -29,8 +27,8 @@ class Routes extends Component {
           <Route exact path="/cart" component={Cart} />
           <Route exact path="/search/:search" component={Search} />
           <Route exact path="/design" component={Design} />
+          <Route exact path="/fashion" component={Fashion} />
         </Switch>
-        <Footer />
       </Router>
     );
   }

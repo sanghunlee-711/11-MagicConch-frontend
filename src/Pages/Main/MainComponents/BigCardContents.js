@@ -2,13 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-function BigCardContents({ issue, title, paragraph }) {
+function BigCardContents({ issue, title, paragraph, src, height }) {
   return (
     <EachContents>
-      <StickyWrapper>
+      <StickyWrapper height={height}>
         <Link to="/" href="https://www.kinfolk.com/at-home-with-kinfolk/">
           <img
-            src="https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/K37_Product_Cover_Thumb.jpg"
+            src={
+              src ||
+              "https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/K37_Product_Cover_Thumb.jpg"
+            }
             alt="AtHomeWithKinfolk_IG_01"
           />
         </Link>
@@ -29,9 +32,11 @@ function BigCardContents({ issue, title, paragraph }) {
 const StickyWrapper = styled.div`
   position: sticky;
   top: 10%;
+  height: ${(props) => props.height};
 `;
 
 const EachContents = styled.div`
+  height: 1877.31px;
   position: relative;
   top: 10%;
   width: 50vw;

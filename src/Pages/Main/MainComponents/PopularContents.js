@@ -10,11 +10,11 @@ export default function PopularContents({ popularData }) {
         {popularData &&
           popularData.map((el, index) => (
             <SmallContents key={index}>
-              <img alt="popularPicture" src={el.src} />
+              <img alt="popularPicture" src={el.image_url} />
               <WordWrapper>
-                <span>{el.issue}</span>
+                <span>{el.tag}</span>
                 <span>{el.title}</span>
-                <span>{el.notion}</span>
+                <span>{el.description}</span>
               </WordWrapper>
             </SmallContents>
           ))}
@@ -23,7 +23,7 @@ export default function PopularContents({ popularData }) {
         <span>Sign up to the Kinfolk newsletter</span>
         <InputWrapper>
           <input type="email" placeholder="YOUR EMAIL" />
-          <input type="submit" />
+          <input type="submit" value="SUBMIT" />
         </InputWrapper>
         <Terms>
           <input type="checkbox" />
@@ -50,7 +50,7 @@ const Terms = styled.div`
 const CheckboxWrapper = styled.div`
   ${(props) => props.theme.setFlex("space-between", "center", "column")}
   width: 100vw;
-  margin-top: 3%;
+  margin-top: 7%;
   margin-bottom: 20%;
   background-color: none;
 
