@@ -11,68 +11,51 @@ class Cart extends Component {
     };
   }
 
-  handleRemoveBtn = (ClickButtonIndex) => {
+  selectComboBoxHandler = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+
+  clickDeleteButton = (ClickButtonIndex) => {
     const { cartList } = this.state;
     const temp = cartList
       .slice(0, ClickButtonIndex)
       .concat(cartList.slice(ClickButtonIndex + 1, cartList.length));
-    this.setState({ cartList: temp });
+    this.setState({
+      cartList: temp,
+    });
   };
 
-  handleSelect = (e) => {
-    const key = Number(e.target.name);
-    const getState = this.state.cartList;
-    getState[key] = { ...getState[key] };
-    getState[key].quantity = Number(e.target.value) + 1;
-    this.setState(getState);
+  updateBasket = () => {
+    fetch("", {
+      method: "POST",
+      Headers: JSON.stringify({
+        identification_for_to_get_cart: "identificaiton_code",
+      }),
+      body: JSON.stringify({ cart_list: this.state.cartList }),
+    }).then((res) => res.json());
   };
 
-  sumSubtotal = () => {
-    const priceList = this.state.cartList.map(
-      (el) => Number(el.product_price) * Number(el.quantity)
-    );
+  calcSubtotal = (cartList) => {
     let result = 0;
-    for (let i in priceList) {
-      result = result + priceList[i];
+    const temp = cartList.map((el) => el.price * el.amount);
+    for (let i in temp) {
+      result = result + temp[i];
     }
     return result;
   };
 
-  calcShippingPrice = () => {
-    return this.state.cartList.length !== 0
-      ? this.state.cartList.length * 9
-      : 0;
+  calcShippingPrince = (cartList) => {
+    return cartList.length * 9;
   };
 
-  sumTotalPrice = () => {
-    return this.calcShippingPrice() + this.sumSubtotal();
-  };
-
-  pushBasket = () => {
-    console.log("click");
-    const id = this.state.cartList.map((el) => el.product_id);
-    const quantity = this.state.cartList.map((el) => el.quantity);
-    fetch(`http://127.0.0.1:8000/basket/product`, {
-      method: "POST",
-      body: JSON.stringify({
-        account_email: "orangemusha@gmail.com",
-        product_id: id,
-        quantity: quantity,
-      }),
-    })
-      .then((res) => res.json())
-      .then((res) => console.log(res));
+  calcTotalPrice = (subtotalPrice, ShippingPrice) => {
+    return subtotalPrice + ShippingPrice;
   };
 
   componentDidMount = () => {
-    let myHeaders = new Headers();
-    myHeaders.append("Authorization", "orangemusha@gmail.com");
-    fetch(`http://127.0.0.1:8000/basket/product`, {
-      method: "GET",
-      headers: myHeaders,
-    })
+    fetch()
       .then((res) => res.json())
-      .then((res) => this.setState({ cartList: res.products }));
+      .then((res) => this.setState({ cartList: res.cartList }));
   };
 
   render() {
@@ -138,27 +121,6 @@ const CartList = styled.section`
 `;
 
 const ListBtn = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding-bottom: 15px;
-
-  span {
-    &::before {
-      content: "";
-      display: inline-block;
-      border: solid 1px #000;
-      width: 7px;
-      height: 7px;
-      box-sizing: border-box;
-      border-left: 0;
-      border-top: 0;
-      transform: rotate(135deg);
-      vertical-align: 2px;
-      margin-left: 6px;
-    }
-  }
-
   h5 {
     text-transform: uppercase;
     font-size: 15px;

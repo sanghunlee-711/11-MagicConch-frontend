@@ -14,18 +14,29 @@ class MyAccount extends Component {
   constructor() {
     super();
     this.state = {
-      access: true,
-      pageIdx: "",
+      access: false,
+      pageIdx: 0,
+
+      isAutoLogin: false,
+      isSubcriptEmail: false,
     };
   }
 
   Logout = () => {
     this.setState({ access: false });
+    localStorage.setItem("login", JSON.stringify(null));
   };
 
   componentDidMount() {
     const { id } = this.props.match.params;
-    this.setState({ pageIdx: addressConfirmObj[id] });
+    let temp;
+    localStorage.getItem("login") === "undefined"
+      ? (temp = null)
+      : (temp = JSON.parse(localStorage.getItem("login")));
+
+    temp !== null
+      ? this.setState({ pageIdx: addressConfirmObj[id], access: true })
+      : this.setState({ pageIdx: addressConfirmObj[id], access: false });
   }
 
   componentDidUpdate(prevProps) {
@@ -37,7 +48,6 @@ class MyAccount extends Component {
 
   render() {
     const { access, pageIdx } = this.state;
-
     return (
       <MainContainer>
         <ContentBox>

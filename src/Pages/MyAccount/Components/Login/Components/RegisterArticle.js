@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import KaKaoLogin from "react-kakao-login";
 import styled from "styled-components";
 import SignButton from "./SignButton";
@@ -9,20 +10,21 @@ import RegisterDescription from "./RegisterDescription.js";
 class RegisterArticle extends Component {
   render() {
     const {
-      email,
+      regEmail,
       regPassword,
       onChangeHandler,
       onClickHandler,
       responseKakao,
       responseFail,
+      checkoBoxHandler,
     } = this.props;
 
     return (
       <Article>
         <ArticleTitle>Register</ArticleTitle>
         <InputComboBox
-          name="email"
-          userInfo={email}
+          name="regEmail"
+          userInfo={regEmail}
           onChangeHandler={onChangeHandler}
           topText="Email address"
         />
@@ -32,19 +34,21 @@ class RegisterArticle extends Component {
           onChangeHandler={onChangeHandler}
           topText="Password"
         />
-        <CheckBoxWithText text="Subscribe to our newsletter" />
+        <CheckBoxWithText
+          checkoBoxHandler={checkoBoxHandler}
+          text="Subscribe to our newsletter"
+        />
         <RegisterDescription />
-        <SignButton
-          onClickHandler={() => onClickHandler("Register")}
-          text="Register"
-        />
-        <KakaoButton
-          jsKey="da89fe547c79ff689114a9ad5d34fadf"
-          buttonText="Kakao"
-          onSuccess={responseKakao}
-          onFailure={responseFail}
-          getProfile="true"
-        />
+        <SignButton onClickHandler={onClickHandler} text="Register" />
+        <Link to="/">
+          <KakaoButton
+            jsKey="da89fe547c79ff689114a9ad5d34fadf"
+            buttonText="Kakao"
+            onSuccess={responseKakao}
+            onFailure={responseFail}
+            getProfile="true"
+          />
+        </Link>
       </Article>
     );
   }

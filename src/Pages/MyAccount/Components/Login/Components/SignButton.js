@@ -1,10 +1,15 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 class SignButton extends Component {
   render() {
     const { text, onClickHandler } = this.props;
-    return <Button onClick={onClickHandler}>{text}</Button>;
+    return (
+      <Link to="/my-account">
+        <Button onClick={() => onClickHandler(text)}>{text}</Button>
+      </Link>
+    );
   }
 }
 
@@ -18,7 +23,7 @@ const Button = styled.button`
 
   &:hover {
     transition-duration: 0.5s;
-    color: white;
+    color: #ffffff;
     background: black;
   }
 `;

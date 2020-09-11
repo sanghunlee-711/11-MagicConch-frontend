@@ -13,27 +13,6 @@ function Search(props) {
   const ShopData = SearchGetData && SearchGetData[0];
   const CategoryData = SearchGetData && SearchGetData[1];
 
-  // const FilterContents = useCallback(
-  //   (res) => {
-  //     const DesignData = res.Design;
-  //     setData(
-  //       DesignData?.filter(
-  //         ({ tag, title, description }) =>
-  //           tag.includes(SearchedWord) ||
-  //           title.includes(SearchedWord) ||
-  //           description.includes(SearchedWord)
-  //       )
-  //     );
-  //   },
-  //   [SearchedWord]
-  // );
-
-  // useEffect(() => {
-  //   fetch("/data/mainMockdata.json")
-  //     .then((res) => res.json())
-  //     .then((res) => FilterContents(res));
-  // }, [FilterContents]);
-
   useEffect(() => {
     fetch(`http://127.0.0.1:8000/search/${search}`)
       .then((res) => res.json())

@@ -8,18 +8,19 @@ import LoginDescription from "./LoginDescription.js";
 class LoginArticle extends Component {
   render() {
     const {
-      userID,
+      loginEmail,
       loginPassword,
       onChangeHandler,
       onClickHandler,
+      checkoBoxHandler,
     } = this.props;
 
     return (
       <Article>
         <ArticleTitle>Login</ArticleTitle>
         <InputComboBox
-          name="userID"
-          userInfo={userID}
+          name="loginEmail"
+          userInfo={loginEmail}
           onChangeHandler={onChangeHandler}
           topText="Username or email address"
         />
@@ -29,12 +30,12 @@ class LoginArticle extends Component {
           onChangeHandler={onChangeHandler}
           topText="Password"
         />
-        <CheckBoxWithText text="Remember me" />
+        <CheckBoxWithText
+          checkoBoxHandler={checkoBoxHandler}
+          text="Remember me"
+        />
         <StyledButton>
-          <SignButton
-            onClickHandler={() => onClickHandler("Login")}
-            text="Log in"
-          />
+          <SignButton onClickHandler={onClickHandler} text="Log in" />
         </StyledButton>
         <LoginDescription />
       </Article>
