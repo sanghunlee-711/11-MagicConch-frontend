@@ -13,6 +13,14 @@ function CardContents({
   explanation,
   minWidth,
 }) {
+  const CutText = (el) => {
+    if (el.length >= 100) {
+      return `${el.slice(0, 100)} [...]`;
+    } else {
+      return el;
+    }
+  };
+
   return (
     <EachContents
       width={width}
@@ -32,7 +40,7 @@ function CardContents({
           </span>
         </div>
         <p>
-          {explanation ||
+          {CutText(explanation) ||
             "Join us for the first in a new series of experiential exhibitions."}
         </p>
       </ContentsIntro>
@@ -41,11 +49,12 @@ function CardContents({
 }
 
 const EachContents = styled.div`
+  font-family: ${(props) => props.theme.libre};
   width: ${(props) => props.width || "100%"};
   height: ${(props) => props.height || "100%"};
   border-left: ${(props) => props.borderLeft};
   min-width: ${(props) => props.minWidth};
-  padding: ${(props) => props.padding || "2%"};
+  padding: ${(props) => props.padding || "0 2%"};
 
   img {
     display: block;
@@ -66,12 +75,14 @@ const ContentsIntro = styled.div`
       }
 
       span:nth-child(2) {
+        color: gray;
         font-weight: 700;
       }
     }
   }
 
   p {
+    color: gray;
     ${(props) => props.theme.setFont("15px", "350")}
   }
 `;

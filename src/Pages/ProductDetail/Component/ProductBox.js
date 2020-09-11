@@ -3,61 +3,43 @@ import styled, { css } from "styled-components";
 import ProductSlider from "./ProductSlider";
 
 class ProductBox extends Component {
-  state = {
-    isClick: false,
-    isName: "",
-  };
-
-  handleEvent = (e) => {
-    this.setState({
-      isClick: !this.state.isClick,
-      isName: e,
-    });
-  };
-
   render() {
-    const { inlist } = this.props;
+    const {
+      productInfo,
+      isClick,
+      isName,
+      handleDetailBtnEvent,
+      clickAddBasketBtn,
+      buttonText,
+    } = this.props;
     return (
       <DetailWrap>
         <DetailBox>
-          <ProductSlider />
+          <ProductSlider imgList={productInfo.inner_imgae_url} />
           <DetailText>
             <ProductText>
-              <h2>{inlist.length > 0 ? inlist[0].inner_tag : ""}</h2>
+              <h2>{productInfo.inner_tag}</h2>
               <h5>
-                <span>${inlist.length > 0 ? inlist[0].price : ""}</span>
+                <span>${productInfo.price}</span>
               </h5>
-              <p>{inlist.length > 0 ? inlist[0].inner_description : ""}</p>
+              <p>{productInfo.inner_description}</p>
             </ProductText>
             <ProductAccordion>
-              <dt onClick={(e) => this.handleEvent("detail")}>
+              <dt onClick={() => handleDetailBtnEvent("detail")}>
                 <span>DETAILS</span>
               </dt>
-              <Minintext
-                isClick={this.state.isClick}
-                isName={this.state.isName}
-                name={"detail"}
-              >
-                <p>{inlist.length > 0 ? inlist[0].inner_details : ""}</p>
-                <p>
-                  <strong>Publication date: June 9th, 2020</strong>
-                </p>
+              <Minintext isClick={isClick} isName={isName} name={"detail"}>
+                <p>{productInfo.inner_details}</p>
               </Minintext>
-              <dt onClick={(e) => this.handleEvent("shopping")}>
+              <dt onClick={() => handleDetailBtnEvent("shopping")}>
                 <span>SHIPPING + HANDLING</span>
               </dt>
-              <Minintext
-                isClick={this.state.isClick}
-                isName={this.state.isName}
-                name={"shopping"}
-              >
-                <p>
-                  {inlist.length > 0 ? inlist[0].inner_shipping_handling : ""}
-                </p>
+              <Minintext isClick={isClick} isName={isName} name={"shopping"}>
+                <p>{productInfo.inner_shipping_handling}</p>
               </Minintext>
             </ProductAccordion>
             <QuantitySelect>
-              <select>
+              <select name="quantity" onChange={this.props.clickSelectBox}>
                 {OPTION_NUMBER.map((el, index) => {
                   return (
                     <option value={index} key={index}>
@@ -68,7 +50,9 @@ class ProductBox extends Component {
               </select>
             </QuantitySelect>
             <AddBasketBtn>
-              <button type="submit">Add to basket</button>
+              <button type="submit" onClick={clickAddBasketBtn}>
+                {buttonText}
+              </button>
             </AddBasketBtn>
           </DetailText>
         </DetailBox>

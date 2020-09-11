@@ -10,13 +10,13 @@ import Footer from "../../Components/Footer/Footer";
 
 export default function Design(props) {
   const [data, setData] = useState([]);
-  const { Design } = data;
-  const GridDesign = Design?.slice(1, 10);
-  const BigPhoto = Design?.slice(0, 1);
-  const BottomDesign = Design?.slice(11, 30);
+  const { Fashion } = data;
+  const GridFashion = Fashion?.slice(1, 10);
+  const BigPhoto = Fashion?.slice(0, 1);
+  const BottomFashion = Fashion?.slice(11, 35);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/categories/designs")
+    fetch("http://127.0.0.1:8000/categories/fashions")
       .then((res) => res.json())
       .then((res) => setData(res));
   }, []);
@@ -27,11 +27,11 @@ export default function Design(props) {
       <Category>
         <ButtonWrapper>
           <GoPrevButton />
-          <Link to="/">ALL STORIES</Link>
+          <Link to="/design">Design</Link>
         </ButtonWrapper>
-        <Theme>Design</Theme>
+        <Theme>FASHION</Theme>
         <NextButton>
-          <Link to="/fashion">FASHION</Link>
+          <Link to="/fashion">INTERIORS</Link>
           <GoNextButton />
         </NextButton>
       </Category>
@@ -47,7 +47,7 @@ export default function Design(props) {
         ))}
 
         <SmallPhotoWrapper>
-          {GridDesign?.map(
+          {GridFashion?.map(
             ({ id, width, image_url, tag, title, description }, index) => (
               <CardContents
                 key={id}
@@ -64,7 +64,7 @@ export default function Design(props) {
         </SmallPhotoWrapper>
       </ScrolledStopPhoto>
       <GridSection>
-        {BottomDesign?.map(({ image_url, tag, title, description }, index) => (
+        {BottomFashion?.map(({ image_url, tag, title, description }, index) => (
           <CardContents
             width="16.6%"
             height="529px"

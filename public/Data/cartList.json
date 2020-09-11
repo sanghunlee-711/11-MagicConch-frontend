@@ -1,0 +1,25 @@
+{
+    "cartList": [
+      {
+        "outer_image_url": "https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/K36_Product_Cover_Thumb-350x350.jpg",
+        "product_type": "MAGAZINE",
+        "outer_tag": "Issue 36",
+        "price": 17,
+        "quality": 1
+      },
+      {
+        "outer_image_url": "https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/K36_Product_Cover_Thumb-350x350.jpg",
+        "product_type": "MAGAZINE",
+        "outer_tag": "Kinfolk 37",
+        "price": 18,
+        "quality": 3
+      },
+      {
+        "outer_image_url": "https://24hkto1dz1v3ddyf93n0ye45-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/K36_Product_Cover_Thumb-350x350.jpg",
+        "product_type": "MAGAZINE",
+        "outer_tag": "Lunatic 38",
+        "price": 20,
+        "quality": 2
+      }
+    ]
+}
